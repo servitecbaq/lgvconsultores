@@ -246,81 +246,47 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
     z-index: 10;
     flex-shrink: 0;
-}
-
-.logo__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: var(--color-white);
-    color: var(--color-primary);
-    border-radius: 12px;
-    font-size: 22px;
     transition: var(--transition);
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.header--scrolled .logo__icon {
-    background: var(--color-primary);
-    color: var(--color-white);
-    box-shadow: 0 4px 12px rgba(27, 42, 74, 0.2);
-}
-
-.logo__text {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: stretch;
-    line-height: 1;
-    gap: 0;
-}
-
-.logo__title {
-    font-family: var(--font-heading);
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--color-white);
-    letter-spacing: 1.5px;
-    line-height: 1;
+.logo__image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
     transition: var(--transition);
-    text-align: left;
-    display: block;
+    /* Ajuste para que el logo se vea bien sobre el hero oscuro */
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
 
-.logo__divider {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--color-white);
-    margin: 5px 0;
-    transition: var(--transition);
-    border-radius: 1px;
+/* En el header scrolled (fondo blanco) */
+.header--scrolled .logo__image {
+    height: 50px;
+    filter: none;
 }
 
-.logo__subtitle {
-    font-family: var(--font-ui);
-    font-size: 9.5px;
-    font-weight: 500;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: var(--color-white);
-    line-height: 1;
-    transition: var(--transition);
-    text-align: justify;
-    display: block;
-    width: 100%;
-    /* Distribuye las letras para ocupar exactamente el ancho de LGV */
-    text-align-last: justify;
+/* Logo en el footer (fondo oscuro) */
+.logo--light .logo__image {
+    height: 70px;
+    /* Si usas el logo con fondo blanco, descomenta: */
+    /* background: #FFFFFF; */
+    /* padding: 12px 16px; */
+    /* border-radius: 12px; */
 }
 
-.header--scrolled .logo__title { color: var(--color-primary); }
-.header--scrolled .logo__divider { background: var(--color-primary); }
-.header--scrolled .logo__subtitle { color: var(--color-primary); }
+/* Responsive */
+@media (max-width: 768px) {
+    .logo__image { height: 50px; }
+    .header--scrolled .logo__image { height: 44px; }
+    .logo--light .logo__image { height: 60px; }
+}
+
+@media (max-width: 480px) {
+    .logo__image { height: 42px; }
+    .header--scrolled .logo__image { height: 38px; }
+    .logo--light .logo__image { height: 54px; }
+}
 
 /* ===== NAVEGACIÓN ===== */
 .nav {
@@ -1882,4 +1848,80 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
         font-size: 14.5px;
         line-height: 1.7;
     }
+}
+/* ============================================
+   LOGO SVG CON FONDO BLANCO
+   ============================================ */
+
+.logo__image {
+    display: block;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    background: #FFFFFF;
+    padding: 8px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+/* Header scrolled (fondo blanco) → sombra más sutil */
+.header--scrolled .logo__image {
+    height: 52px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 10px rgba(27, 42, 74, 0.1);
+}
+
+/* Footer (fondo oscuro) → ligeramente más grande */
+.logo--light .logo__image {
+    height: 72px;
+    padding: 10px 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover: sutil elevación */
+.logo:hover .logo__image {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.header--scrolled .logo:hover .logo__image {
+    box-shadow: 0 4px 14px rgba(27, 42, 74, 0.15);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .logo__image {
+        height: 52px;
+        padding: 6px 11px;
+        border-radius: 10px;
+    }
+    .header--scrolled .logo__image {
+        height: 44px;
+        padding: 5px 10px;
+    }
+    .logo--light .logo__image {
+        height: 60px;
+        padding: 8px 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo__image {
+        height: 44px;
+        padding: 5px 9px;
+        border-radius: 8px;
+    }
+    .header--scrolled .logo__image {
+        height: 38px;
+        padding: 4px 8px;
+    }
+    .logo--light .logo__image {
+        height: 54px;
+        padding: 7px 12px;
+    }
+}
+/* Solo cuando el header está transparente (sobre el hero) */
+.header:not(.header--scrolled) .logo__image {
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }

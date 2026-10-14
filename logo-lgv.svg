@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="665" viewBox="0 0 720 399" role="img" aria-labelledby="title desc">
+  <title id="title">LGV Legal Consultores</title>
+  <desc id="desc">Logotipo de LGV Legal Consultores, con símbolo de balanza en gris y tipografía azul oscuro.</desc>
+  <g id="balanza" fill="none" stroke="#999999" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Emblema superior -->
+    <path d="M160 119 C161 96 176 81 196 81 C215 81 225 98 244 98 C261 98 276 88 286 77 C286 101 270 119 250 121 C228 123 214 105 195 104 C180 103 168 111 160 119 Z" fill="#999999" stroke="none"/>
+    <circle cx="160.5" cy="138.5" r="6.2" fill="#999999" stroke="none"/>
+    <path d="M160.5 153 L160.5 286 M160.5 153 L96 286 M160.5 153 L225 286" stroke-width="4"/>
+    <!-- Platillo de la balanza -->
+    <path d="M97 256 L224 256 L225 264 C221 321 192 367 160 367 C128 367 99 321 95 264 Z" fill="#999999" stroke="none"/>
+  </g>
+  <g id="wordmark" fill="#17133F">
+    <text x="246" y="245" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" letter-spacing="-5">LGV</text>
+    <rect x="250" y="261" width="350" height="4.5"/>
+    <rect x="250" y="269" width="350" height="2"/>
+  </g>
+  <text x="250" y="348" fill="#292929" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="400" letter-spacing="-1.5">Legal Consultores</text>
+</svg>

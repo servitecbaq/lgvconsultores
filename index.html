@@ -385,10 +385,16 @@
                     </div>
                 </div>
 
-                <form class="contact__form" id="contactForm" method="POST">
-                    <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+                <form class="contact__form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Reemplaza TU_ACCESS_KEY_AQUI por la clave que te llegó al correo -->
+                    <input type="hidden" name="access_key" value="55069bed-9f83-4003-b927-54aaf3d71ab6">
+    
+                    <!-- Configuración opcional de Web3Forms -->
                     <input type="hidden" name="subject" value="Nueva consulta desde el sitio web - LGV Legal Consultores">
                     <input type="hidden" name="from_name" value="LGV Legal Consultores">
+    
+                    <!-- Redirección opcional o formato JSON (si prefieres AJAX mantenemos JSON) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <div class="form-group">
                         <label for="nombre">Nombre completo *</label>

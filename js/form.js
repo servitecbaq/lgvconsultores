@@ -1,15 +1,14 @@
 /* ============================================
    FORMULARIO DE CONTACTO - LEGAL CONSULTORES S.A.S
-   Envío con Formspree
+   Envío con Web3Forms
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
-    // Cambia esto por tu ID de Formspree
-    // Ej: https://formspree.io/f/xabcdefg
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/TU_ID_AQUI';
+    // Endpoint oficial de Web3Forms
+    const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
     // Elementos
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar mensajes al usuario
     function showMessage(type, text) {
-        // Eliminar mensaje anterior si existe
         const existingMsg = form.querySelector('.form-message');
         if (existingMsg) existingMsg.remove();
 
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.insertBefore(msg, formNote);
 
-        // Auto-eliminar después de 8 segundos
         setTimeout(() => {
             msg.style.opacity = '0';
             msg.style.transform = 'translateY(-10px)';
@@ -52,48 +49,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Manejo del envío
+    // Manejo del envío mediante Fetch API
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Validación HTML5 nativa
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
         }
 
-        // Recopilar datos
         const formData = new FormData(form);
-
-        // Añadir metadata útil
-        formData.append('_subject', 'Nueva consulta desde el sitio web - LGV Legal Consultores');
-        formData.append('_replyto', formData.get('email'));
-        formData.append('Página', window.location.href);
-        formData.append('Fecha', new Date().toLocaleString('es-CO'));
+        // Convertir los datos a un objeto JSON compatible con Web3Forms
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
         setLoading(true);
 
         try {
-            const response = await fetch(FORMSPREE_ENDPOINT, {
+            const response = await fetch(WEB3FORMS_ENDPOINT, {
                 method: 'POST',
-                body: formData,
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: json
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (response.status === 200) {
                 showMessage(
                     'success',
                     '¡Gracias por contactarnos! Hemos recibido tu mensaje y te responderemos lo antes posible.'
                 );
                 form.reset();
             } else {
-                const data = await response.json().catch(() => ({}));
-                const errorMsg = data.errors
-                    ? data.errors.map(err => err.message).join(', ')
-                    : 'Hubo un problema al enviar el mensaje. Intenta de nuevo.';
-                showMessage('error', errorMsg);
+                showMessage('error', result.message || 'Hubo un problema al enviar el mensaje. Intenta de nuevo.');
             }
         } catch (error) {
             console.error('Error al enviar formulario:', error);
@@ -106,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Limpiar mensajes cuando el usuario empieza a escribir de nuevo
+    // Limpiar mensajes al escribir
     form.querySelectorAll('input, textarea, select').forEach(field => {
         field.addEventListener('input', () => {
             const msg = form.querySelector('.form-message');

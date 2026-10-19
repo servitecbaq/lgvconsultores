@@ -1,4 +1,56 @@
 /* ============================================
+   FUENTES AUTOHOSPEDADAS (subsets "latin" de Google Fonts)
+   y subconjunto de Font Awesome 6.4.0 con solo los glifos usados aqui.
+   Anadir un icono nuevo = anadir su @font-face/.fa-* abajo y su glifo
+   en webfonts/fa-solid-subset.woff2.
+   ============================================ */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('webfonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('webfonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('webfonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('webfonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url('webfonts/playfair-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:900;font-display:swap;src:url('webfonts/playfair-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Font Awesome 6.4.0 subconjunto autohospedado - solo los iconos usados en este sitio */
+@font-face{font-family:"LGV Icons Solid";font-style:normal;font-weight:900;font-display:swap;src:url("webfonts/fa-solid-subset.woff2") format("woff2")}
+@font-face{font-family:"LGV Icons Brands";font-style:normal;font-weight:400;font-display:swap;src:url("webfonts/fa-brands-subset.woff2") format("woff2")}
+.fas,.fa-solid{font-family:"LGV Icons Solid";font-weight:900;font-style:normal}
+.fab,.fa-brands{font-family:"LGV Icons Brands";font-weight:400;font-style:normal}
+[class^="fa-"]::before,[class*=" fa-"]::before{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:auto}
+.fa-arrow-left::before{content:"\f060"}
+.fa-arrow-right::before{content:"\f061"}
+.fa-arrow-up::before{content:"\f062"}
+.fa-award::before{content:"\f559"}
+.fa-balance-scale::before{content:"\f24e"}
+.fa-bolt::before{content:"\f0e7"}
+.fa-briefcase::before{content:"\f0b1"}
+.fa-building::before{content:"\f1ad"}
+.fa-chart-line::before{content:"\f201"}
+.fa-check-circle::before{content:"\f058"}
+.fa-clipboard-check::before{content:"\f46c"}
+.fa-clock::before{content:"\f017"}
+.fa-code::before{content:"\f121"}
+.fa-comments::before{content:"\f086"}
+.fa-envelope::before{content:"\f0e0"}
+.fa-eye::before{content:"\f06e"}
+.fa-file-contract::before{content:"\f56c"}
+.fa-handshake::before{content:"\f2b5"}
+.fa-heart::before{content:"\f004"}
+.fa-map-marker-alt::before{content:"\f3c5"}
+.fa-paper-plane::before{content:"\f1d8"}
+.fa-phone::before{content:"\f095"}
+.fa-shield-alt::before{content:"\f3ed"}
+.fa-spinner::before{content:"\f110"}
+.fa-star::before{content:"\f005"}
+.fa-users::before{content:"\f0c0"}
+.fa-facebook-f::before{content:"\f39e"}
+.fa-instagram::before{content:"\f16d"}
+.fa-tiktok::before{content:"\e07b"}
+.fa-whatsapp::before{content:"\f232"}
+.fa-spin{animation:fa-spin 2s infinite linear}
+@keyframes fa-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+
+/* ============================================
    LEGAL CONSULTORES S.A.S - Stylesheet
    Paleta: Azul + Blanco + Gris
    Fuentes: Apple System Fonts (SF Pro)
@@ -403,7 +455,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80') center 30% / cover no-repeat;
+    background: #0F1B33 url('img/hero-m.webp') center 30% / cover no-repeat;
     padding: 140px 0 80px;
     overflow: hidden;
     width: 100%;
@@ -935,7 +987,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     font-size: 20px;
 }
 
-.contact__item h4 {
+.contact__item h3 {
     font-family: var(--font-heading);
     font-size: 1.05rem;
     color: var(--color-primary);
@@ -1924,4 +1976,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* Solo cuando el header está transparente (sobre el hero) */
 .header:not(.header--scrolled) .logo__image {
     border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hero: fondo en WebP autohospedado, una variante por viewport */
+@media (min-width: 901px) {
+    .hero {
+        background-image: url('img/hero-d.webp');
+    }
 }

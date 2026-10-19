@@ -4,9 +4,8 @@
 User-agent: *
 Allow: /
 
-# Bloquear archivos sensibles
-Disallow: /js/
-Disallow: /css/
+# /css/ y /js/ quedan accesibles: Googlebot necesita icons.css, las fuentes
+# y form.js para renderizar y validar la pagina
 Disallow: /*.json$
 
 # Sitemaps

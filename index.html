@@ -13,16 +13,84 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <!-- Fuentes (fallback para Apple Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Styles -->
+    <!-- Styles: incluye las fuentes autohospedadas y los iconos -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Criticos: fuentes, iconos y fondo del hero (LCP) -->
+    <link rel="preload" as="font" type="font/woff2" href="webfonts/playfair-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="webfonts/inter-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="webfonts/fa-solid-subset.woff2" crossorigin>
+    <link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 900px)" fetchpriority="high">
+    <link rel="preload" as="image" href="img/hero-d.webp" media="(min-width: 901px)" fetchpriority="high">
+    <!-- SEO y redes sociales -->
+    <link rel="canonical" href="https://lgvlegalconsultores.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="LGV Legal Consultores">
+    <meta property="og:title" content="LEGAL CONSULTORES S.A.S | Asesoría Legal y Contable en Colombia">
+    <meta property="og:description" content="Firma de abogados con enfoque humano. Asesoría legal y contable en toda Colombia, presencial y virtual. Consulta gratuita.">
+    <meta property="og:url" content="https://lgvlegalconsultores.com/">
+    <meta property="og:image" content="https://lgvlegalconsultores.com/img/og-lgv.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logotipo de LGV Legal Consultores sobre una balanza de la justicia">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LEGAL CONSULTORES S.A.S | Asesoría Legal y Contable en Colombia">
+    <meta name="twitter:description" content="Firma de abogados con enfoque humano. Asesoría legal y contable en toda Colombia, presencial y virtual. Consulta gratuita.">
+    <meta name="twitter:image" content="https://lgvlegalconsultores.com/img/og-lgv.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "LEGAL CONSULTORES S.A.S",
+      "alternateName": "LGV Legal Consultores",
+      "url": "https://lgvlegalconsultores.com/",
+      "logo": "https://lgvlegalconsultores.com/img/logo-lgv.webp",
+      "image": "https://lgvlegalconsultores.com/img/og-lgv.jpg",
+      "description": "Firma de abogados con enfoque humano. Asesoría legal y contable en toda Colombia, presencial y virtual. Consulta gratuita.",
+      "telephone": "+57 314 869 5606",
+      "email": "heyojoalderecho@gmail.com",
+      "foundingDate": "2021",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "knowsAbout": [
+        "Derecho laboral",
+        "Derecho civil",
+        "Derecho comercial",
+        "Derecho de familia",
+        "Asesoría contable",
+        "Consultoría empresarial"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/Heyojoalderecho",
+        "https://www.instagram.com/lgvlegalconsultores/",
+        "https://www.tiktok.com/@lgv.legal.consult"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -30,7 +98,7 @@
     <header class="header" id="header">
         <div class="container header__container">
             <a href="#inicio" class="logo" aria-label="LGV Legal Consultores - Inicio">
-                <img src="logo-lgv.png" alt="LGV Legal Consultores" class="logo__image">
+                <img src="img/logo-lgv.webp" width="500" height="323" alt="LGV Legal Consultores" class="logo__image" fetchpriority="high" decoding="async">
             </a>
             <nav class="nav" id="nav">
                 <ul class="nav__list">
@@ -131,8 +199,8 @@
 
                 <div class="about__image">
                     <div class="about__image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&q=80"
-                             alt="Equipo de abogados de LEGAL CONSULTORES" loading="lazy">
+                        <img src="img/about.webp" width="880" height="880"
+                             alt="Equipo de abogados de LEGAL CONSULTORES" loading="lazy" decoding="async">
                         <div class="about__badge">
                             <i class="fas fa-award"></i>
                             <div>
@@ -161,9 +229,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&q=80" alt="Derecho Laboral - Equipo de trabajo" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&q=80" alt="Derecho Laboral - Contrato laboral" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Derecho Laboral - Reunión de negocios" loading="lazy">
+                <img src="img/servicios/1521737711867-e3b97375f902.webp" width="746" height="360" alt="Derecho Laboral - Equipo de trabajo" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1521791136064-7986c2920216.webp" width="746" height="360" alt="Derecho Laboral - Contrato laboral" loading="lazy" decoding="async">
+                <img src="img/servicios/1454165804606-c3d57bc86b40.webp" width="746" height="360" alt="Derecho Laboral - Reunión de negocios" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-briefcase"></i></div>
@@ -179,9 +247,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="Derecho Civil - Firma de documentos" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=700&q=80" alt="Derecho Civil - Contratos legales" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=700&q=80" alt="Derecho Civil - Libros de derecho" loading="lazy">
+                <img src="img/servicios/1450101499163-c8848c66ca85.webp" width="746" height="360" alt="Derecho Civil - Firma de documentos" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1589391886645-d51941baf7fb.webp" width="746" height="360" alt="Derecho Civil - Contratos legales" loading="lazy" decoding="async">
+                <img src="img/servicios/1505664194779-8beaceb93744.webp" width="746" height="360" alt="Derecho Civil - Libros de derecho" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-file-contract"></i></div>
@@ -197,9 +265,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80" alt="Asesoría Contable - Documentos financieros" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=700&q=80" alt="Asesoría Contable - Cálculos y análisis" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Asesoría Contable - Reporte financiero" loading="lazy">
+                <img src="img/servicios/1554224155-6726b3ff858f.webp" width="746" height="360" alt="Asesoría Contable - Documentos financieros" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1554224154-26032ffc0d07.webp" width="746" height="360" alt="Asesoría Contable - Cálculos y análisis" loading="lazy" decoding="async">
+                <img src="img/servicios/1454165804606-c3d57bc86b40.webp" width="746" height="360" alt="Asesoría Contable - Reporte financiero" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-chart-line"></i></div>
@@ -215,9 +283,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80" alt="Derecho Comercial - Edificios corporativos" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Derecho Comercial - Reunión de negocios" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=700&q=80" alt="Derecho Comercial - Sociedad mercantil" loading="lazy">
+                <img src="img/servicios/1486406146926-c627a92ad1ab.webp" width="746" height="360" alt="Derecho Comercial - Edificios corporativos" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1454165804606-c3d57bc86b40.webp" width="746" height="360" alt="Derecho Comercial - Reunión de negocios" loading="lazy" decoding="async">
+                <img src="img/servicios/1551836022-d5d88e9218df.webp" width="746" height="360" alt="Derecho Comercial - Sociedad mercantil" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-building"></i></div>
@@ -233,9 +301,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=700&q=80" alt="Derecho de Familia - Familia unida" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=700&q=80" alt="Derecho de Familia - Padres e hijos" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=700&q=80" alt="Derecho de Familia - Unión familiar" loading="lazy">
+                <img src="img/servicios/1511895426328-dc8714191300.webp" width="746" height="360" alt="Derecho de Familia - Familia unida" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1609220136736-443140cffec6.webp" width="746" height="360" alt="Derecho de Familia - Padres e hijos" loading="lazy" decoding="async">
+                <img src="img/servicios/1591604466107-ec97de577aff.webp" width="746" height="360" alt="Derecho de Familia - Unión familiar" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-users"></i></div>
@@ -251,9 +319,9 @@
     <article class="service-card">
         <div class="service-card__image">
             <div class="service-card__slider">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=700&q=80" alt="Consultoría Empresarial - Reunión" loading="lazy" class="active">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Consultoría Empresarial - Presentación" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80" alt="Consultoría Empresarial - Estrategia" loading="lazy">
+                <img src="img/servicios/1556761175-b413da4baf72.webp" width="746" height="360" alt="Consultoría Empresarial - Reunión" loading="lazy" class="active" decoding="async">
+                <img src="img/servicios/1542744173-8e7e53415bb0.webp" width="746" height="360" alt="Consultoría Empresarial - Presentación" loading="lazy" decoding="async">
+                <img src="img/servicios/1552664730-d307ca884978.webp" width="746" height="360" alt="Consultoría Empresarial - Estrategia" loading="lazy" decoding="async">
             </div>
         </div>
         <div class="service-card__icon"><i class="fas fa-handshake"></i></div>
@@ -347,7 +415,7 @@
                     <div class="contact__item">
                         <div class="contact__item-icon"><i class="fas fa-phone"></i></div>
                         <div>
-                            <h4>Teléfonos</h4>
+                            <h3>Teléfonos</h3>
                             <a href="tel:3148695606">314 869 5606</a>
                             <a href="tel:3238097573">323 809 7573</a>
                         </div>
@@ -356,7 +424,7 @@
                     <div class="contact__item">
                         <div class="contact__item-icon"><i class="fas fa-envelope"></i></div>
                         <div>
-                            <h4>Correo Electrónico</h4>
+                            <h3>Correo Electrónico</h3>
                             <a href="mailto:heyojoalderecho@gmail.com">heyojoalderecho@gmail.com</a>
                         </div>
                     </div>
@@ -364,7 +432,7 @@
                     <div class="contact__item">
                         <div class="contact__item-icon"><i class="fas fa-clock"></i></div>
                         <div>
-                            <h4>Horarios de Atención</h4>
+                            <h3>Horarios de Atención</h3>
                             <p>Lunes a viernes: 8:00 a.m. – 5:00 p.m.</p>
                             <p>Sábados: 8:00 a.m. – 12:00 p.m.</p>
                         </div>
@@ -373,7 +441,7 @@
                     <div class="contact__item">
                         <div class="contact__item-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
-                            <h4>Cobertura</h4>
+                            <h3>Cobertura</h3>
                             <p>Servicios en todo el territorio colombiano, presencial y virtual.</p>
                         </div>
                     </div>
@@ -453,7 +521,7 @@
             <div class="footer__grid">
                 <div class="footer__col">
                     <div class="logo logo--light">
-                        <img src="logo-lgv.png" alt="LGV Legal Consultores" class="logo__image logo__image--light">
+                        <img src="img/logo-lgv.webp" width="500" height="323" alt="LGV Legal Consultores" class="logo__image logo__image--light" loading="lazy" decoding="async">
                     </div>
                     <p class="footer__text">
                         Firma de abogados con enfoque humano, comprometida con la defensa
